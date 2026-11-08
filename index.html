@@ -143,6 +143,19 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
 .go{display:block;width:100%;text-align:center;text-decoration:none;background:var(--green);color:var(--yellow);font-weight:800;padding:14px;border-radius:12px}
 .go[disabled],.go.off{background:#C9C3B4;color:#fff;pointer-events:none}
 .go.wa{background:#1FAF54;color:#fff}
+.done{text-align:center;padding:30px 6px}
+.done .tick{font-size:54px}
+.done h4{font-family:'Bricolage Grotesque';font-size:26px;color:var(--green);margin:10px 0 8px}
+.done p{color:var(--muted);font-size:15px;line-height:1.5;margin-top:8px}
+.done .refbig{display:inline-block;margin-top:10px;background:var(--yellow);color:var(--green);font-weight:800;font-size:22px;padding:8px 18px;border-radius:10px;letter-spacing:.04em}
+.sobar button{margin-left:10px;background:var(--green);color:var(--yellow);border:0;font:inherit;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;cursor:pointer}
+.wl{position:fixed;inset:0;display:none;place-items:center;z-index:80;background:rgba(31,59,45,.45);padding:16px}
+.wl.open{display:grid}
+.wl .card{background:var(--paper,#FAF6EE);border-radius:20px;max-width:420px;width:100%;padding:26px 24px;position:relative}
+.wl h3{font-family:'Bricolage Grotesque';color:var(--green);font-size:26px;line-height:1.1}
+.wl .lead{color:var(--muted);font-size:15px;margin-top:8px}
+.wl .x{position:absolute;right:14px;top:10px;background:none;border:0;font-size:26px;cursor:pointer;color:var(--green)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .back{display:block;width:100%;text-align:center;margin-top:10px;font-weight:700;color:var(--muted);font-size:14px}
 
 .paybox{background:#fff;border:2px solid var(--paynow);border-radius:18px;padding:20px;text-align:center}
@@ -232,8 +245,8 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
       <div class="howgrid">
         <div class="hstep"><div class="n">01</div><h4>Add cakes</h4><p>Choose how many Original and Chocolate cakes you want.</p></div>
         <div class="hstep"><div class="n">02</div><h4>Pick a date</h4><p>At least 2 days from today. Choose pickup or delivery.</p></div>
-        <div class="hstep"><div class="n">03</div><h4>PayNow</h4><p>Scan the QR or PayNow to <b>8649 5495</b> with your order reference.</p></div>
-        <div class="hstep"><div class="n">04</div><h4>Send on WhatsApp</h4><p>Tap to send your order and payment screenshot. We'll confirm.</p></div>
+        <div class="hstep"><div class="n">03</div><h4>PayNow</h4><p>Scan the QR at checkout. It already has the amount and your order reference.</p></div>
+        <div class="hstep"><div class="n">04</div><h4>Place your order</h4><p>Tap <b>Place order</b>. Your order comes straight to us, and you get your reference on screen.</p></div>
       </div>
     </div>
   </section>
@@ -255,11 +268,12 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
       <div class="kicker">Questions</div>
       <h2 class="title">Good to know</h2>
       <div class="faq">
-        <details open><summary>How far ahead should I order?</summary><p>At least 2 days. Weekends fill up fast, so earlier is better.</p></details>
-        <details><summary>How do I pay?</summary><p>PayNow only, to 8649 5495. Scan the QR at checkout and include your order reference, then send us the screenshot on WhatsApp.</p></details>
-        <details><summary>Delivery or pickup?</summary><p>Islandwide delivery is $12, or free for orders from $80. Delivery runs 11am–6pm. Self-pickup from our home is free, and we'll send the address when we confirm your order.</p></details>
+        <details open><summary>How far ahead should I order?</summary><p>At least 2 days. We bake only 30 cakes a week, so once a week is full the checkout will ask you to pick another week.</p></details>
+        <details><summary>How do I pay?</summary><p>PayNow only. Scan the QR at checkout (it fills in the amount and your order reference), then tap Place order. We match every payment to its reference.</p></details>
+        <details><summary>Delivery or pickup?</summary><p>Islandwide delivery is $12, or free for orders from $80. Delivery runs 11am–6pm. Self-pickup from our home is free, and we'll SMS you the address before your pickup date.</p></details>
         <details><summary>How long does it keep?</summary><p>3 days at room temperature in an airtight container, up to 7 days chilled. Warm a slice for 10 seconds before eating.</p></details>
         <details><summary>Allergens?</summary><p>Contains egg, dairy and gluten. Baked in a home kitchen that may also handle nuts. No pork or lard.</p></details>
+        <details><summary>How do I contact you?</summary><p>Send us a DM on Instagram at <a href="https://www.instagram.com/pisanglane/" target="_blank" rel="noopener">@pisanglane</a>. We'll only call or SMS you if there's a problem with your order.</p></details>
         <details><summary>Can I change my date?</summary><p>Free date changes up to 48 hours before. After that the bananas are already ripening for you, so no cancellations.</p></details>
       </div>
     </div>
@@ -270,8 +284,7 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
   <div class="wrap foot">
     <div><div class="big">Pisang Lane</div><p style="opacity:.75;margin-top:6px">Home-baked banana cakes · Singapore</p></div>
     <div>
-      <a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp: <span id="waFootTxt"></span></a>
-      <span style="opacity:.85">PayNow: 8649 5495</span>
+      <a href="https://www.instagram.com/pisanglane/" target="_blank" rel="noopener">Instagram: @pisanglane</a>
     </div>
   </div>
 </footer>
@@ -280,7 +293,7 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
 <div class="scrim" id="scrim"></div>
 <aside class="panel" id="panel" aria-label="Your bag">
   <div class="p-head">
-    <div><h3 id="pTitle">Your bag</h3><div class="p-steps"><span id="s1"><b>1 Details</b></span>›<span id="s2">2 Pay</span>›<span id="s3">3 Send</span></div></div>
+    <div><h3 id="pTitle">Your bag</h3><div class="p-steps"><span id="s1"><b>1 Details</b></span>›<span id="s2">2 Pay</span>›<span id="s3">3 Done</span></div></div>
     <button class="close" id="closeBag" aria-label="Close">×</button>
   </div>
 
@@ -292,6 +305,8 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
       <div class="f"><label>Pickup or delivery</label><div class="seg"><button class="on" data-m="pickup">Self-pickup</button><button data-m="delivery">Delivery</button></div></div>
       <div class="f"><label>Name</label><input id="name" placeholder="Your name"></div>
       <div class="f"><label>Mobile</label><input id="phone" inputmode="tel" placeholder="8xxx xxxx"></div>
+      <div class="f"><label>Email (optional, for your records)</label><input id="email" type="email" inputmode="email" placeholder="you@example.com"></div>
+      <div class="hp" aria-hidden="true"><input id="website" tabindex="-1" autocomplete="off"></div>
       <div class="f" id="addrF" style="display:none"><label>Delivery address & postal code</label><textarea id="addr" rows="2" placeholder="Blk 123 Example St #01-01, S123456"></textarea></div>
       <div class="f"><label>Notes (optional)</label><input id="note" placeholder="e.g. Happy Birthday card"></div>
     </div>
@@ -308,10 +323,21 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
       <div class="payrow"><span>Reference<br><b id="payRef"></b></span><button class="copy" id="copyRef">Copy</button></div>
     </div>
     <ol class="paynote">
-      <li>Pay the exact amount above, with the reference in the comments.</li>
-      <li>Screenshot the payment confirmation.</li>
-      <li>Tap <b>Send order on WhatsApp</b> and attach the screenshot.</li>
+      <li>Scan the QR and pay the exact amount. The reference fills in by itself.</li>
+      <li>Then tap <b>I've paid · Place order</b> below.</li>
+      <li>We match your payment to the reference. You don't need to send a screenshot.</li>
     </ol>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="p-body" id="step3" style="display:none">
+    <div class="done">
+      <div class="tick">🍌</div>
+      <h4>Order received. Thank you!</h4>
+      <div class="refbig" id="doneRef"></div>
+      <p id="doneTxt"></p>
+      <p>Screenshot this for your records. Questions? DM us on Instagram at <a href="https://www.instagram.com/pisanglane/" target="_blank" rel="noopener">@pisanglane</a>.</p>
+    </div>
   </div>
 
   <div class="p-foot">
@@ -320,10 +346,28 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
     <div class="sum t"><span>Total</span><span id="tot">$0.00</span></div>
     <div class="err" id="err"></div>
     <button class="go off" id="toPay">Continue to PayNow</button>
-    <a class="go wa" id="sendWa" href="#" target="_blank" rel="noopener" style="display:none">I've paid · Send order on WhatsApp</a>
+    <button class="go" id="placeOrder" style="display:none">I've paid · Place order</button>
+    <button class="go" id="doneBtn" style="display:none">Done</button>
     <button class="back" id="backBtn" style="display:none">← Edit order</button>
   </div>
 </aside>
+<div class="wl" id="wl" role="dialog" aria-modal="true" aria-labelledby="wlT">
+  <div class="card">
+    <button class="x" id="wlX" aria-label="Close">×</button>
+    <h3 id="wlT">Join the January waitlist</h3>
+    <p class="lead">We bake just 30 cakes a week. Leave your details and we'll let you know first when January orders open.</p>
+    <div id="wlForm">
+      <div class="f"><label>Name</label><input id="wlName" placeholder="Your name"></div>
+      <div class="f"><label>Mobile</label><input id="wlPhone" inputmode="tel" placeholder="8xxx xxxx"></div>
+      <div class="f"><label>Email (optional)</label><input id="wlEmail" type="email" placeholder="you@example.com"></div>
+      <div class="f"><label>What would you like? (optional)</label><input id="wlWant" placeholder="e.g. 2 Chocolate, mid-Jan"></div>
+      <div class="hp" aria-hidden="true"><input id="wlWebsite" tabindex="-1" autocomplete="off"></div>
+      <div class="err" id="wlErr" style="margin-top:12px"></div>
+      <button class="go" id="wlGo">Join the waitlist</button>
+    </div>
+    <div id="wlDone" class="done" style="display:none"><div class="tick">💛</div><h4>You're on the list!</h4><p>We'll let you know first when January orders open. Follow <a href="https://www.instagram.com/pisanglane/" target="_blank" rel="noopener">@pisanglane</a> for news.</p></div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -331,13 +375,14 @@ footer{background:var(--green);color:var(--paper);padding:44px 0;font-size:14px}
 const CONFIG = {
   shopName: "Pisang Lane",
   paynowMobile: "86495495",
-  whatsapp: "6586495495",        // country code + number for wa.me
-  whatsappDisplay: "8649 5495",
+  api: "",                       // Google Apps Script web app URL (orders/Code.gs). Empty = ordering off.
+  closedUntil: "2026-12-31",     // no cake dates on or before this day
+  weeklyCap: 30,                 // cakes per week (Mon–Sun); the server checks this too
   leadDays: 2,
   deliveryFee: 12,
   freeDeliveryFrom: 80,
   soldOut: true,                 // true = sold out: no ordering. Set to false to reopen.
-  soldOutMsg: "Fully booked till end Dec: we bake just 30 cakes a week. January orders open soon. Follow @pisanglane on Instagram, or WhatsApp JAN to 8649 5495 to join the waitlist."
+  soldOutMsg: "Fully booked till end Dec. We bake just 30 cakes a week, and January orders open soon."
 };
 const CAKES = [
   {id:"orig", name:"Original Banana Cake", price:20, cls:"orig", art:"slice-orig", ribbon:"Bestseller",
@@ -359,14 +404,14 @@ try{const s=JSON.parse(localStorage.getItem("pl_bag2")||"null"); if(s) qty=Objec
 const save=()=>{try{localStorage.setItem("pl_bag2",JSON.stringify(qty));}catch(e){}};
 if(CONFIG.soldOut){
   qty={orig:0,choc:0}; save();
-  document.body.insertAdjacentHTML("afterbegin",`<div class="sobar">🍌 ${CONFIG.soldOutMsg.replace("@pisanglane",'<a href="https://www.instagram.com/pisanglane/">@pisanglane</a>')}</div>`);
+  document.body.insertAdjacentHTML("afterbegin",`<div class="sobar">🍌 ${CONFIG.soldOutMsg} <button id="wlOpen">Join the waitlist</button></div>`);
 }
 
-$("#waFoot").href="https://wa.me/"+CONFIG.whatsapp; $("#waFootTxt").textContent=CONFIG.whatsappDisplay;
 
 // date limits
 const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const minD=new Date(); minD.setDate(minD.getDate()+CONFIG.leadDays);
+{ const c=new Date(CONFIG.closedUntil+"T00:00"); c.setDate(c.getDate()+1); if(c>minD) minD.setTime(c.getTime()); }
 const maxD=new Date(); maxD.setDate(maxD.getDate()+60);
 $("#date").min=iso(minD); $("#date").max=iso(maxD);
 $("#earliest").textContent=minD.toLocaleDateString("en-SG",{weekday:"short",day:"numeric",month:"short"});
@@ -425,16 +470,24 @@ document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
   document.querySelectorAll(".seg button").forEach(x=>x.classList.remove("on"));
   b.classList.add("on"); mode=b.dataset.m; $("#addrF").style.display=mode==="delivery"?"":"none"; renderBag();
 });
-["#date","#name","#phone","#addr","#note"].forEach(id=>$(id).addEventListener("input",validate));
+["#date","#name","#phone","#addr","#note","#email"].forEach(id=>$(id).addEventListener("input",validate));
+
+// weekly capacity (cakes booked per Mon–Sun week), from the order sheet
+let booked={};
+const monday=iso0=>{const d=new Date(iso0+"T12:00:00Z"); d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7)); return d.toISOString().slice(0,10);};
+if(CONFIG.api&&!CONFIG.soldOut) fetch(CONFIG.api+"?action=avail").then(r=>r.json()).then(j=>{ if(j&&j.booked){ booked=j.booked; validate(); } }).catch(()=>{});
 
 function validate(){
   const t=totals(); let m="";
   const d=$("#date").value;
   if(!t.count) m="";
   else if(!d) m="Pick a date.";
+  else if(d<=CONFIG.closedUntil) m="We're fully booked until "+new Date(CONFIG.closedUntil+"T00:00").toLocaleDateString("en-SG",{day:"numeric",month:"short"})+". Please pick a later date.";
   else if(d<iso(minD)) m="Please order at least "+CONFIG.leadDays+" days ahead.";
+  else if((booked[monday(d)]||0)+t.count>CONFIG.weeklyCap){ const left=Math.max(0,CONFIG.weeklyCap-(booked[monday(d)]||0)); m=left?"Only "+left+" cake"+(left>1?"s":"")+" left that week. Reduce your order or pick another week.":"That week is fully booked. Please pick another week."; }
   else if(!$("#name").value.trim()) m="Add your name.";
   else if(!/^[689]\d{7}$/.test($("#phone").value.replace(/\D/g,"").replace(/^65/,""))) m="Add a valid SG mobile number.";
+  else if($("#email").value.trim()&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($("#email").value.trim())) m="That email looks wrong.";
   else if(mode==="delivery"&&!$("#addr").value.trim()) m="Add your delivery address.";
   $("#err").textContent=m;
   $("#toPay").classList.toggle("off",!(t.count&&!m));
@@ -458,28 +511,68 @@ function makeRef(){
 function goStep(n){
   $("#step1").style.display=n===1?"":"none";
   $("#step2").style.display=n===2?"":"none";
+  $("#step3").style.display=n===3?"":"none";
   $("#toPay").style.display=n===1?"":"none";
-  $("#sendWa").style.display=n===2?"":"none";
+  $("#placeOrder").style.display=n===2?"":"none";
+  $("#doneBtn").style.display=n===3?"":"none";
   $("#backBtn").style.display=n===2?"":"none";
-  $("#pTitle").textContent=n===1?"Your bag":"Pay with PayNow";
+  document.querySelectorAll(".p-foot .sum").forEach(x=>x.style.display=n===3?"none":"");
+  $("#err").textContent=n===3?"":$("#err").textContent;
+  $("#pTitle").textContent=n===1?"Your bag":n===2?"Pay with PayNow":"All done";
   $("#s1").innerHTML=n===1?"<b>1 Details</b>":"1 Details";
   $("#s2").innerHTML=n===2?"<b>2 Pay</b>":"2 Pay";
-  $("#s3").innerHTML="3 Send";
+  $("#s3").innerHTML=n===3?"<b>3 Done</b>":"3 Done";
 }
 $("#toPay").onclick=()=>{
   const t=totals(); ref=makeRef();
   $("#payAmt").textContent=fmt(t.total); $("#payRef").textContent=ref;
   const box=$("#qr"); box.innerHTML="";
   try{ new QRCode(box,{text:paynowPayload(t.total,ref),width:200,height:200,correctLevel:QRCode.CorrectLevel.M}); }
-  catch(e){ box.innerHTML='<div style="font-size:13px;color:var(--muted)">QR unavailable. Please PayNow to 8649 5495 manually.</div>'; }
-  const date=new Date($("#date").value+"T00:00").toLocaleDateString("en-SG",{weekday:"short",day:"numeric",month:"short",year:"numeric"});
-  const items=CAKES.filter(c=>qty[c.id]>0).map(c=>`• ${qty[c.id]} × ${c.name} – ${fmt(c.price*qty[c.id])}`).join("\n");
-  const msg=`Hi ${CONFIG.shopName}! New order 🍌\n\nRef: ${ref}\n${items}\n${mode==="delivery"?"Delivery: "+(t.del?fmt(t.del):"FREE")+"\n":""}Total paid via PayNow: ${fmt(t.total)}\n\nDate: ${date}\n${mode==="delivery"?"Deliver to: "+$("#addr").value.trim():"Self-pickup"}\nName: ${$("#name").value.trim()}\nMobile: ${$("#phone").value.trim()}${$("#note").value.trim()?"\nNotes: "+$("#note").value.trim():""}\n\n(Payment screenshot attached)`;
-  $("#sendWa").href="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(msg);
+  catch(e){ box.innerHTML='<div style="font-size:13px;color:var(--muted)">QR unavailable. Please PayNow to 8649 5495 with reference '+ref+'.</div>'; }
   goStep(2);
 };
 $("#backBtn").onclick=()=>goStep(1);
-$("#sendWa").addEventListener("click",()=>{ setTimeout(()=>{ qty={orig:0,choc:0}; save(); renderBag(); goStep(1); closeBag(); toast("Thank you! We'll confirm on WhatsApp."); },800); });
+async function post(body){
+  const r=await fetch(CONFIG.api,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)});
+  return r.json();
+}
+$("#placeOrder").onclick=async()=>{
+  const b=$("#placeOrder"), t=totals();
+  if(!CONFIG.api){ $("#err").textContent="Online ordering isn't open yet."; return; }
+  b.classList.add("off"); b.textContent="Placing your order…"; $("#err").textContent="";
+  try{
+    const j=await post({type:"order",ref,orig:qty.orig,choc:qty.choc,date:$("#date").value,mode,
+      name:$("#name").value.trim(),mobile:$("#phone").value.trim(),email:$("#email").value.trim(),
+      address:mode==="delivery"?$("#addr").value.trim():"",notes:$("#note").value.trim(),website:$("#website").value});
+    if(!j.ok){ $("#err").textContent=j.error||"Something went wrong. Please try again."; if(j.full) goStep(1); return; }
+    const date=new Date($("#date").value+"T00:00").toLocaleDateString("en-SG",{weekday:"short",day:"numeric",month:"short"});
+    $("#doneRef").textContent=ref;
+    $("#doneTxt").textContent=(qty.orig?qty.orig+" × Original ":"")+(qty.orig&&qty.choc?"+ ":"")+(qty.choc?qty.choc+" × Chocolate ":"")+"· "+fmt(t.total)+" · "+(mode==="delivery"?"delivery":"self-pickup")+" on "+date+". We'll match your PayNow to this reference.";
+    qty={orig:0,choc:0}; save(); renderBag(); goStep(3);
+  }catch(e){ $("#err").textContent="Couldn't reach us. Check your connection and tap again. You won't be charged twice: you've already paid."; }
+  finally{ b.classList.remove("off"); b.textContent="I've paid · Place order"; }
+};
+$("#doneBtn").onclick=()=>{ goStep(1); closeBag(); };
+
+// waitlist
+const wl=$("#wl");
+function openWl(){ wl.classList.add("open"); $("#wlName").focus(); }
+document.addEventListener("click",e=>{ if(e.target.id==="wlOpen") openWl(); });
+$("#wlX").onclick=()=>wl.classList.remove("open");
+wl.addEventListener("click",e=>{ if(e.target===wl) wl.classList.remove("open"); });
+$("#wlGo").onclick=async()=>{
+  const name=$("#wlName").value.trim(), mob=$("#wlPhone").value.replace(/\D/g,"").replace(/^65(?=\d{8}$)/,""), em=$("#wlEmail").value.trim();
+  let m=""; if(!name) m="Add your name."; else if(!/^[689]\d{7}$/.test(mob)) m="Add a valid SG mobile number."; else if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) m="That email looks wrong.";
+  if(!m&&!CONFIG.api) m="The waitlist opens shortly. Please check back soon.";
+  $("#wlErr").textContent=m; if(m) return;
+  const b=$("#wlGo"); b.classList.add("off"); b.textContent="Adding you…";
+  try{ const j=await post({type:"waitlist",name,mobile:mob,email:em,wanted:$("#wlWant").value.trim(),website:$("#wlWebsite").value});
+    if(!j.ok){ $("#wlErr").textContent=j.error||"Something went wrong. Please try again."; return; }
+    $("#wlForm").style.display="none"; $("#wlDone").style.display="";
+  }catch(e){ $("#wlErr").textContent="Couldn't reach us. Check your connection and try again."; }
+  finally{ b.classList.remove("off"); b.textContent="Join the waitlist"; }
+};
+if(location.hash==="#waitlist") openWl();
 
 document.addEventListener("click",e=>{
   const c=e.target.closest(".copy"); if(!c) return;
@@ -490,7 +583,7 @@ document.addEventListener("click",e=>{
 function openBag(){ $("#panel").classList.add("open"); $("#scrim").classList.add("open"); }
 function closeBag(){ $("#panel").classList.remove("open"); $("#scrim").classList.remove("open"); }
 $("#openBag").onclick=openBag; $("#closeBag").onclick=closeBag; $("#scrim").onclick=closeBag;
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeBag(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeBag(); wl.classList.remove("open"); } });
 
 let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),2400); }
 
