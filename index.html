@@ -77,6 +77,9 @@ section{padding:60px 0}
 .stepper button{width:42px;height:44px;font-size:20px;font-weight:800}
 .stepper span{min-width:30px;text-align:center;font-weight:800;font-size:17px}
 .add{background:var(--green);color:var(--yellow);font-weight:800;padding:12px 20px;border-radius:12px}
+.soldout{background:#C9C3B4;color:#fff;font-weight:800;padding:12px 20px;border-radius:12px;letter-spacing:.04em}
+.sobar{background:var(--yellow);color:var(--green);text-align:center;font-weight:800;padding:12px 16px;font-size:15px}
+.sobar a{color:var(--green)}
 .ribbon{position:absolute;top:-12px;right:22px;background:var(--choc);color:var(--paper);font-weight:800;font-size:12px;padding:5px 12px;border-radius:6px;transform:rotate(3deg)}
 @media(max-width:760px){.duo{grid-template-columns:1fr}}
 
@@ -332,7 +335,9 @@ const CONFIG = {
   whatsappDisplay: "8649 5495",
   leadDays: 2,
   deliveryFee: 12,
-  freeDeliveryFrom: 80
+  freeDeliveryFrom: 80,
+  soldOut: true,                 // true = sold out: no ordering. Set to false to reopen.
+  soldOutMsg: "Sold out for now. We're perfecting our next bake. Follow @pisanglane on Instagram for when orders reopen."
 };
 const CAKES = [
   {id:"orig", name:"Original Banana Cake", price:20, cls:"orig", art:"slice-orig", ribbon:"Bestseller",
@@ -352,6 +357,10 @@ let mode="pickup", ref="";
 
 try{const s=JSON.parse(localStorage.getItem("pl_bag2")||"null"); if(s) qty=Object.assign(qty,s);}catch(e){}
 const save=()=>{try{localStorage.setItem("pl_bag2",JSON.stringify(qty));}catch(e){}};
+if(CONFIG.soldOut){
+  qty={orig:0,choc:0}; save();
+  document.body.insertAdjacentHTML("afterbegin",`<div class="sobar">🍌 ${CONFIG.soldOutMsg.replace("@pisanglane",'<a href="https://www.instagram.com/pisanglane/">@pisanglane</a>')}</div>`);
+}
 
 $("#waFoot").href="https://wa.me/"+CONFIG.whatsapp; $("#waFootTxt").textContent=CONFIG.whatsappDisplay;
 
@@ -373,10 +382,10 @@ function renderCakes(){
       <ul>${c.tags.map(t=>`<li>${t}</li>`).join("")}</ul>
       <div class="row">
         <div class="price">${fmt(c.price)} <small>/ cake</small></div>
-        <div style="display:flex;gap:8px">
+        ${CONFIG.soldOut?`<span class="soldout">SOLD OUT</span>`:`<div style="display:flex;gap:8px">
           <div class="stepper"><button data-pm="${c.id}" aria-label="Less">−</button><span>${pick[c.id]}</span><button data-pp="${c.id}" aria-label="More">+</button></div>
           <button class="add" data-add="${c.id}">Add</button>
-        </div>
+        </div>`}
       </div>
     </article>`).join("");
 }
